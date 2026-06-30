@@ -1,0 +1,82 @@
+
+.pagina {
+    background-color: #FAE591; /* Define a cor de fundo bege/amarelada de toda a página */
+}
+
+.Titulo {
+    padding-top: 60px;          /* Adiciona um espaço de 60px acima do título */
+    text-align: center;         /* Centraliza o texto do título na horizontal */
+    background-color: #ffcc00;  /* Cor de fundo amarela atrás do texto do título */
+    color: black;               /* Define a cor das letras do título como preto */
+    padding: 20px;              /* Espaço interno de 20px entre o texto e a borda da caixa do título */
+    border-radius: 15px;        /* Arredonda os quatro cantos da caixa do título */
+}
+
+.cartao {
+    margin: 2rem 2rem;  
+    margin-top: 200px;             /* Cria uma margem externa de afastamento ao redor do cartão */
+    height: 20rem;                   /* Define a altura fixa do cartão */
+    flex-grow: 1;                    /* Permite que o cartão estique para preencher espaços vazios na linha */
+    flex-basis: calc(33% - 8rem);    /* Calcula a largura base do cartão para que caibam cerca de 3 por linha */
+}
+
+
+.cartao_conteudo {
+    background-color: lightgreen;            /* Cor de fundo verde-claro do conteúdo do cartão */
+    text-align: center;                      /* Centraliza os textos dentro do cartão */
+    height: 500px;                           /* Força a altura do conteúdo para 500px */
+    transform-style: preserve-3d;            /* Ativa o efeito 3D real para que os elementos filhos possam girar */
+    transition: transform 300ms ease-in-out; /* Suaviza a animação de rotação para durar 0.3 segundos */
+}
+
+.cartao_conteudo h3 {
+    color: orange;               /* Define a cor do texto do título do cartão como laranja */
+    border: 1px solid black;     /* Cria uma borda fina preta ao redor do título */
+    text-align: left;            /* Alinha o texto do título à esquerda */
+    padding: 0.5rem;             /* Espaço interno entre o texto do título e a bordinha preta */
+    margin: 0.6rem;              /* Afastamento externo do título em relação aos outros elementos */
+    border-radius: 0.7rem;       /* Arredonda os cantos da bordinha preta do título */
+    font-size: 2rem;             /* Define um tamanho de fonte grande para o título */
+    backface-visibility: hidden; /* Esconde este título se o cartão for virado de costas */
+}
+
+#container {
+    display: flex;                  /* Ativa o modo Flexbox para alinhar os cartões em linha/grade */
+    flex-wrap: wrap;                /* Faz os cartões pularem para a linha de baixo quando não couberem mais */
+    justify-content: space-between; /* Distribui os cartões espalhando-os igualmente na largura da tela */
+    padding: 2rem;                  /* Espaçamento interno nas bordas do container */
+    gap: 2.5rem;                      /* Cria um espaço firme de separação entre um cartão e outro */
+}
+
+.cartao_conteudo_pergunta {
+    color: rgb(243, 133, 7); /* Define a cor do texto da pergunta com o seu tom de laranja */
+    font-size: 30px;         /* Define o tamanho da fonte da pergunta como 30px */
+}
+
+.cartao_conteudo_resposta {
+    color: orange;      /* Define a cor do texto da resposta como laranja */
+    font-weight: 700;   /* Deixa a fonte da resposta em negrito bem forte */
+    font-size: 20px;    /* Define o tamanho da fonte da resposta como 20px */
+}
+
+.cartao:hover .cartao_conteudo {
+    transform: rotateY(180deg); /* Faz o cartão girar em 180 graus na horizontal quando o mouse passa por cima */
+}
+
+.cartao_conteudo_pergunta,
+.cartao_conteudo_resposta {
+    backface-visibility: hidden; /* O segredo: esconde a pergunta ou a resposta quando elas ficarem de costas */
+    position: absolute;          /* Sobrepõe a pergunta e a resposta exatamente no mesmo espaço do cartão */
+    height: 100%;                /* Faz as caixas ocuparem toda a altura do cartão */
+    width: 100%;                 /* Faz as caixas ocuparem toda a largura do cartão */
+}
+
+.cartao_conteudo_resposta {
+    transform: rotateY(180deg); /* Começa a resposta já invertida (escondida) para que ela desvire quando o cartão girar */
+}
+
+/* 3. Controlando o tamanho da imagem para não quebrar o layout */
+.imagem_abelha {
+    width: 250px;  /* Define a largura que você quiser (em pixels) */
+    height: auto;  /* Mantém a proporção perfeita da foto */
+}
